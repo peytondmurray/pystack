@@ -2,9 +2,12 @@ import os
 import threading
 import time
 
+import numpy as np
+
 
 def background(first_lock, second_lock):
     with first_lock:
+        arr = np.array([1, 2, 3])
         print("    First lock acquired")
         time.sleep(1)
         with second_lock:
